@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jobya-{% block title %}
+    <title>Writers Hub-{% block title %}
       
     {% endblock title %} </title>
     <meta name="description" content="" />
@@ -72,8 +72,8 @@
             <!-- Logo container-->
             <div>
                 <a href="{% url 'home' %}" class="logo">
-                    <img src="{% static 'images/logo-light.png' %}" alt="" class="logo-light" height="18" />
-                    <img src="{% static 'images/logo-dark.png' %}" alt="" class="logo-dark" height="18" />
+                    <!--<img src="{% static 'images/logo-light.png' %}" alt="" class="logo-light" height="18" />
+                    <img src="{% static 'images/logo-dark.png' %}" alt="" class="logo-dark" height="18" />-->
                 </a>
             </div>                 
             <div class="buy-button">
@@ -120,7 +120,7 @@
     <!-- Navbar End -->
 
     <!-- Start Home -->
-    <section class="bg-home" style="background: url('https://via.placeholder.com/2000X1333//88929f/5a6270C/O https://placeholder.com/') center center;">
+    <section class="bg-home" style="background: url({% static 'main.jpg' %}) center center;">
         <div class="bg-overlay"></div>
         <div class="home-center">
             <div class="home-desc-center">

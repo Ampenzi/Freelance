@@ -9,6 +9,65 @@
 <section class="section pt-0">
     <div class="container">
         <div class="row">
+
+            <div class="col-lg-8 col-md-8">
+                <div class="candidates-listing-item">
+                    {% for application in applications %}
+                    <div class="border mt-4 rounded p-3">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="float-left mr-4">
+                                    <img src="https://via.placeholder.com/400X400//88929f/5a6270C/O https://placeholder.com/" alt="" class="d-block rounded" height="90">
+                                </div>
+                                <div class="candidates-list-desc overflow-hidden job-single-meta  pt-2">
+                                    <h5 class="mb-2"><a href="#" class="text-dark">{{application.job}}</a></h5>
+                                    <ul class="list-unstyled">
+                                        <li class="text-muted"><i class="mdi mdi-currency-usd mr-1">Your Bid</i>{{application.bid}}</li>
+                                    </ul>
+                                    <p class="text-muted mt-1 mb-0">Applied on: {{application.date}}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="candidates-list-fav-btn text-right">
+                                    <div class="fav-icon">
+                                        <i class="mdi mdi-heart"></i>
+                                    </div>
+                                    <div class="candidates-listing-btn mt-4">
+                                        <a href="#" class="btn btn-primary-outline btn-sm">View Application</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% empty %}
+                    <h4 class="heading font-weight-bold mb-4">You have not applied to a job yet</h4>
+                    <a href="{% url 'alljobs' %}" class="heading font-weight-bold mb-4">Click to apply to a job</a>
+                    {% endfor %}
+                </div>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination job-pagination justify-content-center mb-0 mt-4 pt-2">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                <i class="mdi mdi-chevron-double-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="mdi mdi-chevron-double-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            
             <div class="col-lg-4 col-md-4">
                 <div class="left-sidebar">
                     <div class="accordion" id="accordionExample">
@@ -271,222 +330,6 @@
                 </div>
             </div>
 
-            <div class="col-lg-8 col-md-8">
-                <div class="candidates-listing-item">
-                    <div class="border mt-4 rounded p-3">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="float-left mr-4">
-                                    <img src="https://via.placeholder.com/400X400//88929f/5a6270C/O https://placeholder.com/" alt="" class="d-block rounded" height="90">
-                                </div>
-                                <div class="candidates-list-desc overflow-hidden job-single-meta  pt-2">
-                                    <h5 class="mb-2"><a href="#" class="text-dark">Mary Mainor</a></h5>
-                                    <ul class="list-unstyled">
-                                        <li class="text-muted"><i class="mdi mdi-account mr-1"></i>Web Developer</li>
-                                        <li class="text-muted"><a href="" class="text-muted"><i class="mdi mdi-map-marker mr-1"></i>Scenic Way Atlanta.</a></li>
-                                        <li class="text-muted"><i class="mdi mdi-currency-usd mr-1"></i>$700 - $900/month</li>
-                                    </ul>
-                                    <p class="text-muted mt-1 mb-0">Skills : HTML, CSS, JavaScript, Wordpress, PHP, jQueary.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="candidates-list-fav-btn text-right">
-                                    <div class="fav-icon">
-                                        <i class="mdi mdi-heart"></i>
-                                    </div>
-                                    <div class="candidates-listing-btn mt-4">
-                                        <a href="#" class="btn btn-primary-outline btn-sm">View Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="border mt-4 rounded p-3">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="float-left mr-4">
-                                    <img src="https://via.placeholder.com/400X400//88929f/5a6270C/O https://placeholder.com/" alt="" class="d-block rounded" height="90">
-                                </div>
-                                <div class="candidates-list-desc overflow-hidden job-single-meta  pt-2">
-                                    <h5 class="mb-2"><a href="#" class="text-dark">Jack Hallock</a></h5>
-                                    <ul class="list-unstyled">
-                                        <li class="text-muted"><i class="mdi mdi-account mr-1"></i>Web Developer</li>
-                                        <li class="text-muted"><a href="" class="text-muted"><i class="mdi mdi-map-marker mr-1"></i>Scenic Way Atlanta.</a></li>
-                                        <li class="text-muted"><i class="mdi mdi-currency-usd mr-1"></i>$700 - $900/month</li>
-                                    </ul>
-                                    <p class="text-muted mt-1 mb-0">Skills : HTML, CSS, JavaScript, Wordpress, PHP, jQueary.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="candidates-list-fav-btn text-right">
-                                    <div class="fav-icon">
-                                        <i class="mdi mdi-heart"></i>
-                                    </div>
-                                    <div class="candidates-listing-btn mt-4">
-                                        <a href="#" class="btn btn-primary-outline btn-sm">View Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="border mt-4 rounded p-3">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="float-left mr-4">
-                                    <img src="https://via.placeholder.com/400X400//88929f/5a6270C/O https://placeholder.com/" alt="" class="d-block rounded" height="90">
-                                </div>
-                                <div class="candidates-list-desc overflow-hidden job-single-meta  pt-2">
-                                    <h5 class="mb-2"><a href="#" class="text-dark">Rodney Wells</a></h5>
-                                    <ul class="list-unstyled">
-                                        <li class="text-muted"><i class="mdi mdi-account mr-1"></i>Web Developer</li>
-                                        <li class="text-muted"><a href="" class="text-muted"><i class="mdi mdi-map-marker mr-1"></i>Scenic Way Atlanta.</a></li>
-                                        <li class="text-muted"><i class="mdi mdi-currency-usd mr-1"></i>$700 - $900/month</li>
-                                    </ul>
-                                    <p class="text-muted mt-1 mb-0">Skills : HTML, CSS, JavaScript, Wordpress, PHP, jQueary.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="candidates-list-fav-btn text-right">
-                                    <div class="fav-icon">
-                                        <i class="mdi mdi-heart"></i>
-                                    </div>
-                                    <div class="candidates-listing-btn mt-4">
-                                        <a href="#" class="btn btn-primary-outline btn-sm">View Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="border mt-4 rounded p-3">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="float-left mr-4">
-                                    <img src="https://via.placeholder.com/400X400//88929f/5a6270C/O https://placeholder.com/" alt="" class="d-block rounded" height="90">
-                                </div>
-                                <div class="candidates-list-desc overflow-hidden job-single-meta  pt-2">
-                                    <h5 class="mb-2"><a href="#" class="text-dark">Ruth Miles</a></h5>
-                                    <ul class="list-unstyled">
-                                        <li class="text-muted"><i class="mdi mdi-account mr-1"></i>Web Developer</li>
-                                        <li class="text-muted"><a href="" class="text-muted"><i class="mdi mdi-map-marker mr-1"></i>Scenic Way Atlanta.</a></li>
-                                        <li class="text-muted"><i class="mdi mdi-currency-usd mr-1"></i>$700 - $900/month</li>
-                                    </ul>
-                                    <p class="text-muted mt-1 mb-0">Skills : HTML, CSS, JavaScript, Wordpress, PHP, jQueary.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="candidates-list-fav-btn text-right">
-                                    <div class="fav-icon">
-                                        <i class="mdi mdi-heart"></i>
-                                    </div>
-                                    <div class="candidates-listing-btn mt-4">
-                                        <a href="#" class="btn btn-primary-outline btn-sm">View Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="border mt-4 rounded p-3">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="float-left mr-4">
-                                    <img src="https://via.placeholder.com/400X400//88929f/5a6270C/O https://placeholder.com/" alt="" class="d-block rounded" height="90">
-                                </div>
-                                <div class="candidates-list-desc overflow-hidden job-single-meta  pt-2">
-                                    <h5 class="mb-2"><a href="#" class="text-dark">Frank Tower</a></h5>
-                                    <ul class="list-unstyled">
-                                        <li class="text-muted"><i class="mdi mdi-account mr-1"></i>Web Developer</li>
-                                        <li class="text-muted"><a href="" class="text-muted"><i class="mdi mdi-map-marker mr-1"></i>Scenic Way Atlanta.</a></li>
-                                        <li class="text-muted"><i class="mdi mdi-currency-usd mr-1"></i>$700 - $900/month</li>
-                                    </ul>
-                                    <p class="text-muted mt-1 mb-0">Skills : HTML, CSS, JavaScript, Wordpress, PHP, jQueary.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="candidates-list-fav-btn text-right">
-                                    <div class="fav-icon">
-                                        <i class="mdi mdi-heart"></i>
-                                    </div>
-                                    <div class="candidates-listing-btn mt-4">
-                                        <a href="#" class="btn btn-primary-outline btn-sm">View Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="border mt-4 rounded p-3">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="float-left mr-4">
-                                    <img src="https://via.placeholder.com/400X400//88929f/5a6270C/O https://placeholder.com/" alt="" class="d-block rounded" height="90">
-                                </div>
-                                <div class="candidates-list-desc overflow-hidden job-single-meta  pt-2">
-                                    <h5 class="mb-2"><a href="#" class="text-dark">Jerry Real</a></h5>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item mr-4">
-                                            <p class="text-muted mb-0"><i class="mdi mdi-account mr-1"></i>PHP Developer</p>
-                                        </li>
-
-                                        <li class="list-inline-item mr-4">
-                                            <p class="mb-0"><a href="" class="text-muted"><i class="mdi mdi-map-marker mr-1"></i> Werninger Houston</a></p>
-                                        </li>
-
-                                        <li class="list-inline-item">
-                                            <p class="text-muted mb-0"><i class="mdi mdi-currency-usd mr-1"></i>$800 - $950/month</p>
-                                        </li>
-                                    </ul>
-                                    <p class="text-muted mt-1 mb-0">Skills : HTML, CSS, JavaScript, Wordpress, PHP, jQueary.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="candidates-list-fav-btn text-right">
-                                    <div class="fav-icon">
-                                        <i class="mdi mdi-heart"></i>
-                                    </div>
-                                    <div class="candidates-listing-btn mt-4">
-                                        <a href="#" class="btn btn-primary-outline btn-sm">View Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination job-pagination justify-content-center mb-0 mt-4 pt-2">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                <i class="mdi mdi-chevron-double-left"></i>
-                            </a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                <i class="mdi mdi-chevron-double-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
         </div>
     </div>
 </section>

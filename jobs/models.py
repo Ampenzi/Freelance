@@ -31,8 +31,9 @@ class Job(models.Model):
         return self.name
 
 class Application(models.Model):
-    applicant = models.ForeignKey(User, on_delete=models.CASCADE)
     job = models.ForeignKey(Job, on_delete=models.SET_NULL, null=True)
+    applicant = models.ForeignKey(User, on_delete=models.CASCADE)
+    subject = models.CharField(max_length=50)
     proposal = models.TextField()
     bid = models.FloatField(default=0.0)
     date = models.DateTimeField(auto_now_add=True)
@@ -45,4 +46,4 @@ class Application(models.Model):
         verbose_name_plural = 'Applications'
 
     def __str__(self):
-        self.applicant
+        self.job

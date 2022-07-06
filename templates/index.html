@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jobya </title>
+    <title>Writers Hub</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="Themesdesign" />
@@ -70,8 +70,9 @@
             <!-- Logo container-->
             <div>
                 <a href="{% url 'home' %}" class="logo">
-                    <img src="{% static 'images/logo-light.png' %}" alt="" class="logo-light" height="18" />
-                    <img src="{% static 'images/logo-dark.png' %}" alt="" class="logo-dark" height="18" />
+                    <!--<img src="{% static 'images/logo-light.png' %}" alt="" class="logo-light" height="18" />-->
+                    <!--<img src="{% static 'images/logo-dark.png' %}" alt="" class="logo-dark" height="18" />-->
+                    <!--<img src="{% static 'main.jpg' %}" alt="" class="logo-light">-->
                 </a>
             </div>                 
             <div class="buy-button">
@@ -114,7 +115,7 @@
     <!-- Navbar End -->
 
     <!-- Start Home -->
-    <section class="bg-home" style="background: url('https://via.placeholder.com/2000X1333//88929f/5a6270C/O https://placeholder.com/') center center;">
+    <section class="bg-home" style="background: url({% static 'main.jpg' %}) center center;">
         <div class="bg-overlay"></div>
         <div class="home-center">
             <div class="home-desc-center">
@@ -133,6 +134,7 @@
     </section>
     <!-- end home -->
 
+{% comment %}
     <!-- popular category start -->
     <section class="section">
         <div class="container">
@@ -1477,7 +1479,7 @@
                 <div class="col-lg-4 col-md-6 mt-4 pt-2">
                     <div class="blog position-relative overflow-hidden shadow rounded">
                         <div class="position-relative overflow-hidden">
-                            <img src="https://via.placeholder.com/800X533//88929f/5a6270C/O https://placeholder.com/" class="img-fluid rounded-top" alt="">
+                            <img src="{% static 'main.jpg' %}" class="img-fluid rounded-top" alt="">
                             <div class="overlay rounded-top bg-dark"></div>
                             <div class="likes">
                                 <ul class="list-unstyled mb-0">
@@ -1501,6 +1503,7 @@
         </div>
     </section>
     <!-- blog end -->
+{% endcomment %}
 
     <hr>
     <footer class="footer footer-bar">

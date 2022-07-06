@@ -1,12 +1,15 @@
 from django.urls import path
+from django.urls import re_path as url 
 from .views import(
     jobs,
     job_details,
-    applications
+    applications,
+    Apply,
 )
 
 urlpatterns = [
     path('all-jobs/', jobs, name='alljobs'),
-    path('job-details/', job_details, name='jobdetails'),
-    path('applications/', applications, name='applications'),
+    url(r'^job-details/(?P<id>\d+)/&', job_details, name='jobdetails'),
+    url(r'^applications/', applications, name='applications'),
+    url(r'^apply/(?P<id>\d+)/&', Apply.as_view(), name='apply')
 ]
