@@ -44,7 +44,7 @@
         </div>
 
         <!-- Hero Start -->
-        <section class="vh-100" style="background: url('https://via.placeholder.com/2000X1333//88929f/5a6270C/O https://placeholder.com/') center center;">
+        <section class="vh-100" style="background: url('{% static 'main.jpg' %}') center center;">
             <div class="home-center">
                 <div class="home-desc-center">
                     <div class="container">
@@ -97,7 +97,7 @@
                                                 <div class="form-group">
                                                     <div class="custom-control m-0 custom-checkbox">
                                                         <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                        <label class="custom-control-label" ="customCheck1">I Accept <a href="#" class="text-primary">Terms And Condition</a></label>
+                                                        <label class="custom-control-label" for="customCheck1">I Accept <a href="{% url 'terms' %}" class="text-primary">Terms And Condition</a></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +113,7 @@
                                                 </ul><!--end icon-->
                                             </div>
                                             <div class="mx-auto">
-                                                <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a href="login.html" class="text-dark font-weight-bold">Sign in</a></p>
+                                                <p class="mb-0 mt-3"><small class="text-dark mr-2">Already have an account ?</small> <a href="{% url 'login' %}" class="text-dark font-weight-bold">Sign in</a></p>
                                             </div>
                                         </div>
                                     </form>

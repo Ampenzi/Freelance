@@ -50,3 +50,6 @@ class Apply(LoginRequiredMixin, View):
             form.save()
             return redirect('applications')
         return render(request, 'apply.html')
+
+def TnC(request):
+    return render(request, 'faq.html')
