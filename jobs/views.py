@@ -14,7 +14,7 @@ from .forms import ApplicationForm
 
 @login_required(login_url='login')
 def jobs(request):
-    jobs = Job.objects.filter(completed = False)
+    jobs = Job.objects.all()
     context={
         'jobs': jobs
     }
@@ -46,7 +46,8 @@ class Apply(LoginRequiredMixin, View):
         form = ApplicationForm(request.POST)
         if form.is_valid:
             form.instance.applicant = user
-            form.instance.job = job.name
+            form.instance.job = job
+            form.instance.subject = job.name
             form.save()
             return redirect('applications')
         return render(request, 'apply.html')

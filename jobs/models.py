@@ -37,7 +37,7 @@ class Application(models.Model):
     proposal = models.TextField()
     bid = models.FloatField(default=0.0)
     date = models.DateTimeField(auto_now_add=True)
-    state = models.BooleanField(default=False)
+    award = models.BooleanField(default=False, verbose_name='Assign Work')
 
     class Meta:
         db_table = ''
@@ -46,4 +46,15 @@ class Application(models.Model):
         verbose_name_plural = 'Applications'
 
     def __str__(self):
-        self.job
+        return self.job.name 
+    
+    def get_job(self):
+        job = self.job.name
+        return(job)
+
+    def get_job_state(self):
+        state = self.job.completed
+        if state is True:
+            return True
+        else:
+            return False

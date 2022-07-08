@@ -238,7 +238,12 @@
                         <div class="list-grid-item rounded">
                             <div class="grid-item-content p-3">
                                 <ul class="list-inline mb-0">
-                                    <li class="list-inline-item f-15"><span class="badge badge-success">Part Time</span></li>
+                                    
+                                    {% if job.completed %}
+                                    <li class="list-inline-item f-15"><span class="badge badge-danger">Closed</span></li>
+                                    {% else %}
+                                    <li class="list-inline-item f-15"><span class="badge badge-success">Open</span></li>
+                                    {% endif %}
                                     <li class="list-inline-item float-right">
                                         <div class="grid-fev-icon">
                                             <a href="" class="text-danger"><i class="mdi mdi-heart"></i></a>
