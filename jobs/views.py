@@ -29,7 +29,10 @@ def job_details(request, id):
 def applications(request):
     user = User.objects.get(pk=request.user.id)
     applications = Application.objects.filter(applicant=user)
-    return render(request, 'applications.html', {'applications': applications})
+    context= {
+        'applications': applications
+        }
+    return render(request, 'applications.html', context )
 
 class Apply(LoginRequiredMixin, View):
     def get(self, request, id):

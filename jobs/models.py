@@ -54,7 +54,4 @@ class Application(models.Model):
 
     def get_job_state(self):
         state = self.job.completed
-        if state is True:
-            return True
-        else:
-            return False
+        return state
