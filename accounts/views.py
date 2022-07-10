@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.views import View
 
@@ -32,9 +33,9 @@ class Login(LoginView):
         self.request.session.modified = True
         return super(Login, self).form_valid(form)
 
+@login_required(login_url='login')
+def profile(request):
+    return render(request, 'profile.html')
 
 def home(request):
     return render(request, 'index.html')
-
-def base(request):
-    return render(request, 'base.html')
