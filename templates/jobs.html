@@ -239,7 +239,7 @@
                             <div class="grid-item-content p-3">
                                 <ul class="list-inline mb-0">
                                     
-                                    {% if job.completed %}
+                                    {% if job.completed is True %}
                                     <li class="list-inline-item f-15"><span class="badge badge-danger">Closed</span></li>
                                     {% else %}
                                     <li class="list-inline-item f-15"><span class="badge badge-success">Open</span></li>
