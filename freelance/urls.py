@@ -13,3 +13,6 @@ urlpatterns = [
     path('T&Cs/', TnC, name='terms')
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+admin.site.site_header = "Distinct Writers Hub Admin"
+admin.site.site_title = "Distinct Writers Hub Admin"
+admin.site.index_title = "Distinct Writers Hub Admin"
