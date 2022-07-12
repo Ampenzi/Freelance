@@ -20,7 +20,7 @@ admin.site.register(Job, JobAdmin)
 
 class ApplicationAdmin(admin.ModelAdmin):
     model = Application
-    list_display = ['applicant', 'subject','bid', 'date', 'award']
+    list_display = ['applicant', 'subject', 'date', 'award']
     list_display_links = ['applicant']
 
 admin.site.register(Application, ApplicationAdmin)

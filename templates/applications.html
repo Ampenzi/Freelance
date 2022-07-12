@@ -297,7 +297,7 @@
                                         {% if application.award is False and application.get_job_state is False%}
                                         <span class="badge badge-secondary">Pending</span>
                                         {% elif application.award is True and application.get_job_state is False %}
-                                        <span class="badge badge-warning">Won</span>
+                                        <span class="badge badge-warning">Assigned</span>
                                         {% elif application.award is True and application.get_job_state is True%}
                                         <span class="badge badge-success">Completed</span>
                                         {% elif application.award is False and application.get_job_state is True%}

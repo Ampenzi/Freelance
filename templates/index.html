@@ -95,7 +95,7 @@
                 <!-- Navigation Menu-->   
                 <ul class="navigation-menu">
                     <li><a href="{% url 'home' %}">Home</a></li>
-                    <li class="has-submenu"><a href="{% url 'alljobs' %}">Jobs</a></li>
+                    <li class="has-submenu"><a href="{% url 'alljobs' %}">Orders</a></li>
                     {% if user.is_authenticated %}
                     <li class="has-submenu"><a href="{% url 'applications' %}">Applications</a></li>
                     {% else %}

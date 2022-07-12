@@ -20,6 +20,7 @@ class Job(models.Model):
     fee = models.FloatField(default=0.0, verbose_name='Salary')
     completed = models.BooleanField(default=False)
     added_on = models.DateField(auto_now_add=True)
+    assigned = models.BooleanField(default=False)
     due = models.DateTimeField()
 
     class Meta:
@@ -34,8 +35,6 @@ class Application(models.Model):
     job = models.ForeignKey(Job, on_delete=models.SET_NULL, null=True)
     applicant = models.ForeignKey(User, on_delete=models.CASCADE)
     subject = models.CharField(max_length=50)
-    proposal = models.TextField()
-    bid = models.FloatField(default=0.0)
     date = models.DateTimeField(auto_now_add=True)
     award = models.BooleanField(default=False, verbose_name='Assign Work')
 

@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from django.contrib.auth.models import User
+from django.db.models import Q 
 # Create your views here.
 
 from .models import (
@@ -10,20 +11,25 @@ from .models import (
     Application
 )
 
-from .forms import ApplicationForm
 
 @login_required(login_url='login')
 def jobs(request):
-    jobs = Job.objects.all()
+    jobs = Job.objects.filter(Q(assigned = True) & Q(completed=False))
     context={
         'jobs': jobs
     }
     return render(request, 'jobs.html', context)
 
-@login_required(login_url='login')
-def job_details(request, id):
-    job = Job.objects.get(pk=id)
-    return render(request, 'job-details.html', {'job':job})
+class JobDetails(LoginRequiredMixin, View):
+    def get(self, request, id):
+        job = Job.objects.get(pk=id)
+        return render(request, 'job-details.html', {'job':job})
+    def post(self, request, id):
+        user = User.objects.get(id = request.user.id)
+        job = Job.objects.get(pk=id)
+        obj = Application.objects.create(applicant=user, job=job, subject=job.name,)
+        return redirect('applications')        
+        
 
 @login_required(login_url='login')
 def applications(request):
@@ -34,26 +40,8 @@ def applications(request):
         }
     return render(request, 'applications.html', context )
 
-class Apply(LoginRequiredMixin, View):
-    def get(self, request, id):
-        job = Job.objects.get(pk=id)
-        form = ApplicationForm()
-        context = {
-            'form': form,
-            'job': job
-            }
-        return render(request, 'apply.html', context)
-    def post(self, request, id):
-        job = Job.objects.get(pk=id)
-        user = User.objects.get(pk=request.user.id)
-        form = ApplicationForm(request.POST)
-        if form.is_valid:
-            form.instance.applicant = user
-            form.instance.job = job
-            form.instance.subject = job.name
-            form.save()
-            return redirect('applications')
-        return render(request, 'apply.html')
-
 def TnC(request):
     return render(request, 'faq.html')
+
+def test(request):
+    return render(request, 'apply.html')

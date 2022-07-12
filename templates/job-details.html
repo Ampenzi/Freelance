@@ -87,9 +87,12 @@
                         </div>
                     </div>
 
-                    <div class="job-detail border rounded mt-4">
-                        <a href="{% url 'apply' job.id %}" class="btn btn-primary btn-block">Apply For Job</a>
-                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="job-detail border rounded mt-4">
+                            <button class="btn btn-primary btn-block" type="submit">Apply For Job<button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
