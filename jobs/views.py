@@ -44,4 +44,8 @@ def TnC(request):
     return render(request, 'faq.html')
 
 def test(request):
-    return render(request, 'apply.html')
+    jobs = Job.objects.filter(Q(assigned = True) & Q(completed=False))
+    context={
+        'jobs': jobs
+    }
+    return render(request, 'apply.html', context)
