@@ -13,7 +13,7 @@ admin.site.register(Category, CategoryAdmin)
 
 class JobAdmin(admin.ModelAdmin):
     model = Job
-    list_display = ['name', 'category', 'fee', 'completed']
+    list_display = ['name', 'category', 'fee', 'completed', 'assigned']
     list_display_links = ['name']
 
 admin.site.register(Job, JobAdmin)
