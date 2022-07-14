@@ -14,7 +14,7 @@ from .models import (
 
 @login_required(login_url='login')
 def jobs(request):
-    jobs = Job.objects.filter(Q(assigned = False) | Q(completed=False))
+    jobs = Job.objects.filter(Q(assigned = False) & Q(completed=False))
     context={
         'jobs': jobs
     }
