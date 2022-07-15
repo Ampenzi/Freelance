@@ -1,0 +1,45 @@
+{% extends 'newbase.html' %}
+{% load static %}
+{% block title %}Submissions{% endblock title %}
+
+{% block content %}
+
+<body>
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader -->
+    <section class="vh-100" style="background: url('{% static 'main.jpg' %}') center center;">
+        <div class="home-center">
+            <div class="home-desc-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="login_page bg-white shadow rounded p-4">
+                                <div class="text-center">
+                                    <h4 class="mb-4">Order Submissions</h4>  
+                                </div>
+                                <form class="login-form" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        {{form.as_p}}
+                                        <div class="col-md-12">
+                                            <button class="btn btn-primary w-100" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div> <!--end col-->
+                    </div><!--end row-->
+                </div> <!--end container-->
+            </div>
+        </div>
+    </section><!--end section-->
+</body>
+{% endblock content %}

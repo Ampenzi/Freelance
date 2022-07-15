@@ -1,3 +1,7 @@
-
 from django import forms
-from .models import Application
+from .models import Submission
+
+class SubmissionForm(forms.ModelForm):
+    class Meta:
+        model = Submission
+        fields =('doc',)

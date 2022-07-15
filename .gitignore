@@ -78,3 +78,4 @@ cython_debug/
 *migrations/
 db.sqlite3
 db.sqlite3
+media/

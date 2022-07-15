@@ -54,3 +54,12 @@ class Application(models.Model):
     def get_job_state(self):
         state = self.job.completed
         return state
+
+class Submission(models.Model):
+    job = models.CharField(max_length=50)
+    doc = models.FileField(upload_to='uploads/')
+    date = models.DateField(auto_now_add=True)
+
+
+    def __str__(self):
+        return self.job

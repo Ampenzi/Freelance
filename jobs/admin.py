@@ -2,7 +2,8 @@ from django.contrib import admin
 from .models import(
     Category,
     Job,
-    Application
+    Application,
+    Submission,
 )
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -24,3 +25,8 @@ class ApplicationAdmin(admin.ModelAdmin):
     list_display_links = ['applicant']
 
 admin.site.register(Application, ApplicationAdmin)
+
+class SubmissionAdmin(admin.ModelAdmin):
+    list_display = ['job', 'date', 'doc']
+
+admin.site.register(Submission, SubmissionAdmin)
