@@ -17,7 +17,7 @@ class Job(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, verbose_name='Job Category')
     name = models.CharField(max_length=50, verbose_name='Task name')
     details = models.TextField()
-    fee = models.FloatField(default=0.0, verbose_name='Salary')
+    fee = models.CharField(max_length=20, verbose_name='Salary')
     completed = models.BooleanField(default=False)
     added_on = models.DateField(auto_now_add=True)
     assigned = models.BooleanField(default=False)
